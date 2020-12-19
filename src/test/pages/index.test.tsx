@@ -1,6 +1,6 @@
 import React from 'react'
-import { render } from '../testUtils'
-import Index from '../../pages/index'
+import { render } from 'test/testUtils'
+import Index from 'pages/index'
 
 describe('Index page', () => {
   it('should display document static texts', async () => {

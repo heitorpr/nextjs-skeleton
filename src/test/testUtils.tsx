@@ -1,10 +1,10 @@
+import React, { ReactElement } from 'react'
 import { render, RenderResult } from '@testing-library/react'
-import { ReactElement } from 'react'
 import { CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { RouterContext } from 'next/dist/next-server/lib/router-context'
 import { MittEmitter } from 'next/dist/next-server/lib/mitt'
-import theme from '../src/theme'
+import theme from 'theme'
 // import { TranslationProvider } from "my-i18n-lib"
 // import defaultStrings from "i18n/en-x-default"
 
@@ -36,7 +36,7 @@ const Providers = ({ children }) => {
           return Promise.resolve(true)
         },
         isFallback: false,
-        events: {} as MittEmitter,
+        events: {} as MittEmitter
       }}
     >
       <ThemeProvider theme={theme}>

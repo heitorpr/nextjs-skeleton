@@ -1,22 +1,32 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "globalReturn": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "extends": [
-    "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
-    // Uncomment the following lines to enable eslint-config-prettier
-    // Is not enabled right now to avoid issues with the Next.js repo
-    // "prettier",
-    // "prettier/@typescript-eslint"
+    "standard",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/standard",
+    "prettier/react",
+    "eslint:recommended"
   ],
   "env": {
     "es6": true,
+    "es2021": true,
     "browser": true,
     "jest": true,
     "node": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "react/react-in-jsx-scope": 0,
     "react/display-name": 0,
     "react/prop-types": 0,
@@ -26,7 +36,7 @@
     "@typescript-eslint/member-delimiter-style": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-var-requires": 0,
-    "@typescript-eslint/no-use-before-define": 0,
+    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/no-unused-vars": [
       2,
       {
@@ -38,6 +48,16 @@
       {
         "allow": ["warn", "error"]
       }
-    ]
+    ],
+    "no-use-before-define": 0,
+    "space-before-function-paren": 0
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "JSX": "writable"
   }
 }

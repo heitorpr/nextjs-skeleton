@@ -15,12 +15,12 @@ function LightBulbIcon(props: SvgIconProps): JSX.Element {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      margin: theme.spacing(6, 0, 3),
+      margin: theme.spacing(6, 0, 3)
     },
     lightBulb: {
       verticalAlign: 'middle',
-      marginRight: theme.spacing(1),
-    },
+      marginRight: theme.spacing(1)
+    }
   })
 )
 
